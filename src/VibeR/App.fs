@@ -12,8 +12,7 @@ module App =
     let view model =
         Application(
             ContentPage(
-                "VibeR",
-                VStack(spacing = 16.) {
+                (VStack(spacing = 16.) {
                     Label("VibeR")
                         .font(size = 32.)
                         .centerTextHorizontal()
@@ -22,20 +21,16 @@ module App =
                         .font(size = 24.)
                         .centerTextHorizontal()
 
-                    HStack(spacing = 12.) {
-                        Button("-", Decrement)
-                            .font(size = 22.)
-
+                    (HStack(spacing = 12.) {
+                        Button("-", Decrement).font(size = 22.)
                         Button("Reset", Reset)
-
-                        Button("+", Increment)
-                            .font(size = 22.)
-                    }
-                    |> _.centerHorizontal()
-                }
-                |> _.centerVertical()
-                |> _.padding(30.)
+                        Button("+", Increment).font(size = 22.)
+                    })
+                        .centerHorizontal()
+                })
+                    .center()
+                    .padding(30.)
             )
         )
 
-    let program = Program.stateful init update view
+    let program = Program.stateful init update |> Program.withView view

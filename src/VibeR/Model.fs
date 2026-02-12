@@ -1,7 +1,5 @@
 namespace VibeR
 
-open Fabulous
-
 module Model =
 
     type Msg =
@@ -11,10 +9,12 @@ module Model =
 
     type Model = { Count: int }
 
-    let init () = { Count = 0 }
+    let initModel = { Count = 0 }
+
+    let init () = initModel
 
     let update msg model =
         match msg with
         | Increment -> { model with Count = model.Count + 1 }
         | Decrement -> { model with Count = model.Count - 1 }
-        | Reset -> init ()
+        | Reset -> initModel
