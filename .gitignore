@@ -1,0 +1,25 @@
+## .NET
+bin/
+obj/
+*.user
+*.suo
+*.userprefs
+*.ncrunchproject
+*.ncrunchsolution
+.vs/
+packages/
+
+## MAUI / Android
+*.apk
+*.aab
+*.keystore
+*.jks
+
+## IDE
+.idea/
+*.swp
+*~
+
+## OS
+.DS_Store
+Thumbs.db
