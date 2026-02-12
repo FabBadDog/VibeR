@@ -2,6 +2,7 @@ namespace VibeR
 
 open Fabulous
 open Fabulous.Maui
+open Microsoft.Maui.Controls
 open Microsoft.Maui.Graphics
 
 open type Fabulous.Maui.View
@@ -11,7 +12,8 @@ open VibeR.Model
 module App =
 
     let accentColor = Color.FromArgb("#64B5F6")
-    let bgColor = Colors.Black
+    let accentBrush = SolidColorBrush(accentColor)
+    let bgBrush = SolidColorBrush(Colors.Black)
     let textColor = Colors.White
 
     let view model =
@@ -31,19 +33,19 @@ module App =
                     (HStack(spacing = 12.) {
                         Button("-", Decrement)
                             .font(size = 22.)
-                            .backgroundColor(accentColor)
-                            .textColor(bgColor)
+                            .background(accentBrush)
+                            .textColor(Colors.Black)
                             .cornerRadius(0)
 
                         Button("Reset", Reset)
-                            .backgroundColor(accentColor)
-                            .textColor(bgColor)
+                            .background(accentBrush)
+                            .textColor(Colors.Black)
                             .cornerRadius(0)
 
                         Button("+", Increment)
                             .font(size = 22.)
-                            .backgroundColor(accentColor)
-                            .textColor(bgColor)
+                            .background(accentBrush)
+                            .textColor(Colors.Black)
                             .cornerRadius(0)
                     })
                         .centerHorizontal()
@@ -51,7 +53,7 @@ module App =
                     .center()
                     .padding(30.)
             )
-                .backgroundColor(bgColor)
+                .background(bgBrush)
         )
 
     let program = Program.stateful init update view
