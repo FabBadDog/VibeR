@@ -33,4 +33,4 @@ module App =
             )
         )
 
-    let program = Program.stateful init update |> Program.withView view
+    let program = Program.stateful init update view
