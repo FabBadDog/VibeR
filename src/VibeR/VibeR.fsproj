@@ -31,4 +31,8 @@
     <Compile Include="Platforms/Android/MainActivity.fs" />
   </ItemGroup>
 
+  <ItemGroup>
+    <AndroidResource Include="Platforms/Android/Resources/**" />
+  </ItemGroup>
+
 </Project>
